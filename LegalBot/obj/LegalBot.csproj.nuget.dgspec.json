@@ -1,27 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Tech Jargon\\source\\repos\\LegalBot\\LegalBot\\LegalBot.csproj": {}
+    "/home/maryanne/LegalBot/LegalBot/LegalBot/LegalBot.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Tech Jargon\\source\\repos\\LegalBot\\LegalBot\\LegalBot.csproj": {
+    "/home/maryanne/LegalBot/LegalBot/LegalBot/LegalBot.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tech Jargon\\source\\repos\\LegalBot\\LegalBot\\LegalBot.csproj",
+        "projectUniqueName": "/home/maryanne/LegalBot/LegalBot/LegalBot/LegalBot.csproj",
         "projectName": "LegalBot",
-        "projectPath": "C:\\Users\\Tech Jargon\\source\\repos\\LegalBot\\LegalBot\\LegalBot.csproj",
-        "packagesPath": "C:\\Users\\Tech Jargon\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tech Jargon\\source\\repos\\LegalBot\\LegalBot\\obj\\",
+        "projectPath": "/home/maryanne/LegalBot/LegalBot/LegalBot/LegalBot.csproj",
+        "packagesPath": "/home/maryanne/.nuget/packages/",
+        "outputPath": "/home/maryanne/LegalBot/LegalBot/LegalBot/obj/",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Tech Jargon\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/maryanne/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -57,6 +58,10 @@
               "target": "Package",
               "version": "[2.1.0, )",
               "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
             }
           },
           "imports": [
@@ -69,7 +74,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.201/RuntimeIdentifierGraph.json"
         }
       }
     }

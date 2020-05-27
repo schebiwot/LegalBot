@@ -1,0 +1,195 @@
+{  
+    "id": 123,  
+    "name": "Mukesh Kumar",  
+    "address": {  
+      "street": "El Camino Real",  
+      "city": "New Delhi",  
+      "zipcode": 95014  
+    },  
+    "counties": [  
+      {  
+        "countyid": 1,  
+        "countyname": "Mombasa"  
+      },  
+      {  
+        "countyid": 2,  
+        "countyname": "Kwale"  
+      },  
+      {  
+        "countyid": 3,  
+        "countyname": "Kilifi"  
+      },
+      {  
+        "countyid": 4,  
+        "countyname": "Lamu"  
+      },
+      {  
+        "countyid": 5,  
+        "countyname": "Tana River"  
+      },
+      {  
+        "countyid": 6,  
+        "countyname": "Taita Taveta"  
+      },
+      {  
+        "countyid": 7,  
+        "countyname": "Garissa"  
+      },
+      {  
+        "countyid":8,  
+        "countyname": "Wajir"  
+      },
+      {  
+        "countyid": 9,  
+        "countyname": "Mandera"  
+      },
+      {  
+        "countyid": 10,  
+        "countyname": "Marsabit"  
+      } 
+      ,
+      {  
+        "countyid": 11,  
+        "countyname": "Isiolo"  
+      } 
+      ,
+      {  
+        "countyid": 12,  
+        "countyname": "Meru"  
+      } 
+      ,
+      {  
+        "countyid": 13,  
+        "countyname": "Tharak Nithi"  
+      } ,
+      {  
+        "countyid": 14,  
+        "countyname": "Embu"  
+      } ,
+      {  
+        "countyid": 15,  
+        "countyname": "Kitui"  
+      } ,
+      {  
+        "countyid": 16,  
+        "countyname": "Machakos"  
+      } ,
+      {  
+        "countyid": 17,  
+        "countyname": "Makueni"  
+      } ,
+      {  
+        "countyid": 18,  
+        "countyname": "Nyandarua"  
+      } ,
+      {  
+        "countyid": 19,  
+        "countyname": "Nyeri"  
+      } ,
+      {  
+        "countyid": 20,  
+        "countyname": "Kirinyaga"  
+      } ,
+      {  
+        "countyid": 21,  
+        "countyname": "Murang'a"  
+      },
+      {  
+        "countyid": 22,  
+        "countyname": "Kiambu"  
+      }
+      ,
+      {  
+        "countyid": 23,  
+        "countyname": "Turkana"  
+      }
+      ,
+      {  
+        "countyid": 24,  
+        "countyname": "West Pokot"  
+      }
+      ,
+      {  
+        "countyid": 25,  
+        "countyname": "Smaburu"  
+      }
+      ,
+      {  
+        "countyid": 26,  
+        "countyname": "Trans-nzoia"  
+      }
+      ,
+      {  
+        "countyid": 27,  
+        "countyname": "Uasin Gishu"  
+      }
+      ,
+      {  
+        "countyid": 28,  
+        "countyname": "Elgeyo Marakwet"  
+      }
+      ,
+      {  
+        "countyid": 29,  
+        "countyname": "Nandi"  
+      }
+      ,
+      {  
+        "countyid": 30,  
+        "countyname": "Baringo"  
+      } 
+      ,
+      {  
+        "countyid": 31,  
+        "countyname": "Laikipia"  
+      } 
+      ,
+      {  
+        "countyid": 32,  
+        "countyname": "Baringo"  
+      } 
+      ,
+      {  
+        "countyid": 30,  
+        "countyname": "Baringo"  
+      } 
+      ,
+      {  
+        "countyid": 30,  
+        "countyname": "Baringo"  
+      } 
+      ,
+      {  
+        "countyid": 30,  
+        "countyname": "Baringo"  
+      } 
+      ,
+      {  
+        "countyid": 30,  
+        "countyname": "Baringo"  
+      } 
+      ,
+      {  
+        "countyid": 30,  
+        "countyname": "Baringo"  
+      } 
+      ,
+      {  
+        "countyid": 30,  
+        "countyname": "Baringo"  
+      } 
+      ,
+      {  
+        "countyid": 30,  
+        "countyname": "Baringo"  
+      } 
+      ,
+      {  
+        "countyid": 30,  
+        "countyname": "Baringo"  
+      }   
+
+    ],  
+    "phoneNumber": 9988664422,  
+    "role": "Developer"  
+  } 
