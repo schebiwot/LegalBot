@@ -197,26 +197,30 @@ namespace LegalBot.Dialogs
         private async Task<DialogTurnResult> WardStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
         {
             // value we get back from the choice prompt
-            stepContext.Values["subcounty"] = ((FoundChoice)stepContext.Result).Value;
-            if((string) stepContext.Values["preferredLanguage"] == "English"){
-                return await stepContext.PromptAsync($"{nameof(EnglishDetailsDialog)}.ward",
+            stepContext.Values["subcounty"] = (int)stepContext.Result;
 
-                new PromptOptions
+            if((string) stepContext.Values["preferredLanguage"] == "English"){
+
+              var promptOptions =  new PromptOptions
                 {
                     Prompt = MessageFactory.Text("Which ward do you live? :"),
                     Choices = ChoiceFactory.ToChoices(new List<string> { "kiambu1", "Eldoret1", "Naivasha1", "Nakuru1", "MayCorn" }),
 
-                }, cancellationToken);
+                };
+                return await stepContext.PromptAsync($"{nameof(EnglishDetailsDialog)}.ward",promptOptions,cancellationToken);
             }
             else {
-                return await stepContext.PromptAsync($"{nameof(EnglishDetailsDialog)}.ward",
+                
 
-                new PromptOptions
+               var promptOptions= new PromptOptions
                 {
                     Prompt = MessageFactory.Text("Unaishi Katika Ward gani ?"),
                     Choices = ChoiceFactory.ToChoices(new List<string> { "kiambu1", "Eldoret1", "Naivasha1", "Nakuru1", "MayCorn" }),
 
-                }, cancellationToken);
+                };
+                
+                return await stepContext.PromptAsync($"{nameof(EnglishDetailsDialog)}.ward",
+                , cancellationToken);
             }
         }
 
