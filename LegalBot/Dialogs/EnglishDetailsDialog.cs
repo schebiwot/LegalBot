@@ -25,6 +25,9 @@ namespace LegalBot.Dialogs
     {
         private readonly BotStateService _botStateService;
         private string jsonFile = @"Json/county.json";
+        public  string county ="";
+        public string sub_county = "";
+        public string ward  ="";
         public EnglishDetailsDialog(string dialogId, BotStateService botStateService) : base(dialogId)
         {
             _botStateService = botStateService ?? throw new ArgumentNullException(nameof(botStateService));
@@ -49,7 +52,7 @@ namespace LegalBot.Dialogs
             AddDialog(new TextPrompt($"{nameof(EnglishDetailsDialog)}.name"));
             AddDialog(new NumberPrompt<int>($"{nameof(EnglishDetailsDialog)}.county"));
             AddDialog(new NumberPrompt<int>($"{nameof(EnglishDetailsDialog)}.subcounty"));
-            AddDialog(new ChoicePrompt($"{nameof(EnglishDetailsDialog)}.ward"));
+            AddDialog(new NumberPrompt<int>($"{nameof(EnglishDetailsDialog)}.ward"));
             AddDialog(new TextPrompt($"{nameof(EnglishDetailsDialog)}.menu"));
             // AddDialog(new TextPrompt($"{nameof(EnglishDetailsDialog)}.location"));
             // set the starting dialog 
@@ -110,6 +113,7 @@ namespace LegalBot.Dialogs
               var counties = JsonConvert.DeserializeObject<List<County>>(json);
 
                 string options ="";
+                
 
                 for(int i =0; i<counties.Count; i++){
 
@@ -156,17 +160,23 @@ namespace LegalBot.Dialogs
                 int id = (int)stepContext.Values["county"];
               
                 string sub_counties = "";
+               
+                
                 for(int i =0; i<counties.Count; i++){ 
                     
 
                             if(counties[i].CountyId == id) 
                             {
-                              for(int j = 0; j< counties[i].SubCounties.Length;j++){
+                                county += counties[i].CountyName;
+                                
+                                 for(int j = 0; j< counties[i].SubCounties.Length;j++){
                                    sub_counties += $"\n{j+1}.{counties[i].SubCounties[j].Name}\n";
+                                  
                                }
                             }
                             
-                } 
+                }
+             
                 
                 
             if((string) stepContext.Values["preferredLanguage"] == "English"){
@@ -198,13 +208,45 @@ namespace LegalBot.Dialogs
         {
             // value we get back from the choice prompt
             stepContext.Values["subcounty"] = (int)stepContext.Result;
+            
+              int sub_id = (int)stepContext.Values["subcounty"];
+              var json = File.ReadAllText(jsonFile);
+              var counties = JsonConvert.DeserializeObject<List<County>>(json);
+              string [] ward_arr = new string[] {};
+              string ward_str = "";
+               
+                int county_id = (int)stepContext.Values["county"];
+              
+                for(int i =0; i<counties.Count; i++){ 
+                    
+
+                            if(counties[i].CountyId == county_id) 
+                            { 
+                               
+                              for(int j = 0; j< counties[i].SubCounties.Length;j++){
+                                  sub_county = counties[i].SubCounties[j].Name;
+                                  
+                                   if(counties[i].SubCounties[j].Id == sub_id){
+                                       ward_arr = counties[i].SubCounties[j].Wards;
+                                }
+                                        
+                                   }
+                            }
+                } 
+                for(int k = 0; k < ward_arr.Length; k++){
+                   ward_str +=$"\n {k+1}. {ward_arr[k]}\n";
+                }
+
+                            
+                
+
 
             if((string) stepContext.Values["preferredLanguage"] == "English"){
 
               var promptOptions =  new PromptOptions
                 {
-                    Prompt = MessageFactory.Text("Which ward do you live? :"),
-                    Choices = ChoiceFactory.ToChoices(new List<string> { "kiambu1", "Eldoret1", "Naivasha1", "Nakuru1", "MayCorn" }),
+                    Prompt = MessageFactory.Text("Which ward do you live? :\n"+ ward_str),
+                    RetryPrompt = MessageFactory.Text("Please choose an option from the list."),
 
                 };
                 return await stepContext.PromptAsync($"{nameof(EnglishDetailsDialog)}.ward",promptOptions,cancellationToken);
@@ -214,28 +256,27 @@ namespace LegalBot.Dialogs
 
                var promptOptions= new PromptOptions
                 {
-                    Prompt = MessageFactory.Text("Unaishi Katika Ward gani ?"),
-                    Choices = ChoiceFactory.ToChoices(new List<string> { "kiambu1", "Eldoret1", "Naivasha1", "Nakuru1", "MayCorn" }),
+                    Prompt = MessageFactory.Text("Unaishi Katika Ward gani ?\n"+ ward_str),
+                    RetryPrompt = MessageFactory.Text(" Tafadhali chagua option kutoka list."),
 
                 };
                 
-                return await stepContext.PromptAsync($"{nameof(EnglishDetailsDialog)}.ward",
-                , cancellationToken);
+                return await stepContext.PromptAsync($"{nameof(EnglishDetailsDialog)}.ward",promptOptions
+                ,cancellationToken);
             }
         }
 
         //value we get back from the choice prompt
         private async Task<DialogTurnResult> ConfirmationStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken) {
-            stepContext.Values["ward"] = ((FoundChoice)stepContext.Result).Value;
-
+            stepContext.Values["ward"] = (int)stepContext.Result;
+            
             var userDetails= await _botStateService.UserDetailsAccessor.GetAsync(stepContext.Context, () => new UserDetails(), cancellationToken);
 
                  userDetails.Language = (string) stepContext.Values["preferredLanguage"];
                  userDetails.FullName = (string) stepContext.Values["name"];
-                
-                 userDetails.SubCounty = (string) stepContext.Values["subcounty"];
+                 userDetails.County = county;
+                 userDetails.SubCounty =sub_county;
                  
-                 userDetails.Ward = (string)stepContext.Values["ward"];
             // Show the summary to the user 
             if((string) stepContext.Values["preferredLanguage"] == "English"){
             await stepContext.Context.SendActivityAsync(MessageFactory.Text($" Congratulations {userDetails.FullName}! You are now" +

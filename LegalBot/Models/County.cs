@@ -21,5 +21,8 @@ namespace LegalBot.Models
         public int Id{get;set;}
         [JsonProperty("name")]
         public string Name{get;set;}
+        
+         [JsonProperty("wards")]
+        public string [] Wards {get; set;}
     }
 }
