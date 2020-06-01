@@ -400,38 +400,41 @@
           }
           
         ]
-     
-
-      } ,
-      {  
-        "countyid": 14,  
+      },
+      {
+        "countyid": 14,
         "countyname": "Embu",
         "sub_counties": [
           {
-            "id":1,
-            "name":"Manyatta",
-            "wards":["Ruguru/Ngandori", "Kithimu", "Nginda", "Mbeti North","Kirimari", "Gaturi South"]
+            "id": 1,
+            "name": "Manyatta",
+            "wards":["Ruguru/Ngandori", "Kithimu", "Nginda", "Mbeti North", "Kirimari", "Gaturi South"]
           },
-         
+          
           {
-            "id":2,
-            "name":"Mbeere north",
-            "wards":[" Nthawa, Muminji, Evurore"]
-          },
-          {
-            "id":3,
-            "name":"Mbeere south",
-            "wards":["Mwea, Amakim, Mbeti South, Mavuria, Kiambere"]
+            "id": 2,
+            "name": "Mbeere north",
+            "wards":["Nthawa", "Muminji", "Evurore"]
           },
           {
-            "id":4,
-            "name":"Runyenjes",
+            "id": 3,
+            "name": "Mbeere south",
+            "wards":["Mwea", "Amakim", "Mbeti South", "Mavuria", "Kiambere"]
+          },
+          {
+            "id": 4,
+            "name": "Runyenjes",
             "wards":["Gaturi North", "Kagaari South", "Kagaari North", "Central Ward", "Kyeni North", "Kyeni South"]
           }
-         
+    
         ]
-         
-      } ,
+    
+      },
+    
+
+
+  
+ 
       {  
         "countyid": 15,  
         "countyname": "Kitui",
@@ -523,7 +526,8 @@
           }
         ]
         
-      } ,
+      },
+
       {  
         "countyid": 17,  
         "countyname": "Makueni",
@@ -559,14 +563,14 @@
             "name":"Mbooni",
             "wards":["Tulimani", "Mbooni", "Kithungo/Kitundu", "Kiteta/Kisau", "Waia-Kako", "Kalawa"]
           }
-        ]
-        
-      } ,
-      {  
-        "countyid": 18,  
-        "countyname": "Nyandarua",
-        
-        "sub_counties": [
+        ]},
+          
+
+          { 
+            "countyid":18,
+            "countyname":"Nyandarua",
+
+            "sub_counties": [
           {
             "id":1,
             "name":"Kinangop",
@@ -3261,139 +3265,139 @@
     
     
       },
-      {
-        "countyid": 40,
-        "countyname": "Busia",
-        "sub_counties": [
           {
-            "id": 1,
-            "name": "Budalangi",
+            "countyid": 40,
+            "countyname": "Busia",
+            "sub_counties": [
+              {
+                "id": 1,
+                "name": "Budalangi",
+                "wards": [
+                  "Bunyala North",
+          
+                  "Bulemia",
+        
+                  "Bukani",
+            
+                  "Bukoma",
+          
+                  "Lunyofu",
+          
+                "Bunyala South"
+                ]
+              },
+          
+          {
+            "id": 2,
+            "name": "Butula",
             "wards": [
-              "Bunyala North",
-       
-              "Bulemia",
-    
-              "Bukani",
-         
-              "Bukoma",
-       
-              "Lunyofu",
-       
-             "Bunyala South"
+              "Marachi West",
+          
+              "Bukhalalire",
+          
+              "Esikoma",
+          
+              "Elugulu",
+        
+              "Elukongo",
+          
+              "Elukhari",
+          
+          
+              "Tingolo"
+            ]
+          
+          },
+          {
+            "id": 3,
+            "name": "Funyula",
+            "wards": [
+              "Funyula North",
+          
+              "Namboboto",
+            
+              "Odiado",
+        
+              "Wakhungu",
+        
+              "Nangina",
+        
+              "Funyula South",
+          
+              "Bwiri"
+            ]
+          
+          },
+          {
+            "id": 4,
+            "name": "Nambele",
+            "wards": [
+              "Tangakona-Khwirale",
+        
+              "Manyole",
+          
+              "Lwanyange",
+        
+              "Bukhayo North-Walatsi",
+        
+              "Bukhayo East",
+        
+              "Kisoko",
+        
+              "Bukhayo Central"
             ]
           },
-      
-      {
-        "id": 2,
-        "name": "Butula",
-        "wards": [
-          "Marachi West",
-       
-          "Bukhalalire",
-      
-          "Esikoma",
-      
-          "Elugulu",
-    
-          "Elukongo",
-       
-          "Elukhari",
-      
-       
-          "Tingolo"
-        ]
-      
-      },
-      {
-        "id": 3,
-        "name": "Funyula",
-        "wards": [
-          "Funyula North",
-      
-          "Namboboto",
+          {
+            "id": 5,
+            "name": "Teso North",
+            "wards": [
+              "Malaba Central",
+          
+              "Malaba South",
         
-          "Odiado",
-    
-          "Wakhungu",
-    
-          "Nangina",
-    
-          "Funyula South",
-       
-          "Bwiri"
+              "Malaba East",
+        
+              "Malaba North",
+          
+              "Ang‟urai",
+        
+              "Ang‟urai North",
+        
+              "Ang‟urai East"
+            ]
+          
+          },
+          {
+            "id": 6,
+            "name": "Teso South",
+            "wards": [
+              "Malaba West",
+        
+              "Amukura East",
+        
+              "Amukura central",
+              "   ",
+              "Akoret",
+        
+              "Chakol  North",
+        
+              "Kaliwa",
+        
+              "Chakol Central",
+        
+              "Chakol South",
+        
+              "Alupe",
+        
+              "Ang‟orom",
+        
+              "Amerikwai",
+        
+              "Agolot"
+            ]
+          }
         ]
-      
-      },
-      {
-        "id": 4,
-        "name": "Nambele",
-        "wards": [
-          "Tangakona-Khwirale",
-    
-          "Manyole",
-      
-          "Lwanyange",
-     
-          "Bukhayo North-Walatsi",
-     
-          "Bukhayo East",
-    
-          "Kisoko",
-    
-          "Bukhayo Central"
-        ]
-      },
-      {
-        "id": 5,
-        "name": "Teso North",
-        "wards": [
-          "Malaba Central",
-       
-          "Malaba South",
-    
-          "Malaba East",
-    
-          "Malaba North",
-      
-          "Ang‟urai",
-    
-          "Ang‟urai North",
-    
-          "Ang‟urai East"
-        ]
-      
-      },
-      {
-        "id": 6,
-        "name": "Teso South",
-        "wards": [
-          "Malaba West",
-    
-          "Amukura East",
-    
-          "Amukura central",
-          "   ",
-          "Akoret",
-    
-          "Chakol  North",
-     
-          "Kaliwa",
-     
-          "Chakol Central",
-    
-          "Chakol South",
-    
-          "Alupe",
-    
-          "Ang‟orom",
-    
-          "Amerikwai",
-    
-          "Agolot"
-        ]
-       }
-     ]
-    },
+        },
     
     
            
