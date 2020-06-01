@@ -2,9 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\LegalBot",
-    "\\LegalBot\\Json",
-    "\\LegalBot\\Services"
+    "\\LegalBot\\Dialogs",
+    "\\LegalBot\\Helpers"
   ],
-  "SelectedNode": "\\LegalBot\\Json\\county.json",
+  "SelectedNode": "\\LegalBot",
   "PreviewInSolutionExplorer": false
 }
