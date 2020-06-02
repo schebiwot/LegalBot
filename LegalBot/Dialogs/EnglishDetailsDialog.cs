@@ -102,6 +102,7 @@ namespace LegalBot.Dialogs
         {   
             // setting the users name 
             stepContext.Values["name"] = (string)stepContext.Result;
+
             //  reading data from the json file
             var json = File.ReadAllText(jsonFile);
             
@@ -233,6 +234,7 @@ namespace LegalBot.Dialogs
                                    }
                             }
                 } 
+                
                 for(int k = 0; k < ward_arr.Length; k++){
                    ward_str +=$"\n {k+1}. {ward_arr[k]}\n";
                 }
