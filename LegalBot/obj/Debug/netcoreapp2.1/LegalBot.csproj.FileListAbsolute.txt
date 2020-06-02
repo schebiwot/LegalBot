@@ -1,25 +1,3 @@
-C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/bin/Debug/netcoreapp2.1/appsettings.Development.json
-C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/bin/Debug/netcoreapp2.1/DeploymentTemplates/new-rg-parameters.json
-C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/bin/Debug/netcoreapp2.1/DeploymentTemplates/preexisting-rg-parameters.json
-C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/bin/Debug/netcoreapp2.1/DeploymentTemplates/template-with-new-rg.json
-C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/bin/Debug/netcoreapp2.1/DeploymentTemplates/template-with-preexisting-rg.json
-C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/bin/Debug/netcoreapp2.1/Properties/launchSettings.json
-C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/bin/Debug/netcoreapp2.1/appsettings.json
-C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/bin/Debug/netcoreapp2.1/LegalBot.deps.json
-C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/bin/Debug/netcoreapp2.1/LegalBot.runtimeconfig.json
-C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/bin/Debug/netcoreapp2.1/LegalBot.runtimeconfig.dev.json
-C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/bin/Debug/netcoreapp2.1/LegalBot.dll
-C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/obj/Debug/netcoreapp2.1/LegalBot.csprojAssemblyReference.cache
-C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/obj/Debug/netcoreapp2.1/LegalBot.RazorAssemblyInfo.cache
-C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/obj/Debug/netcoreapp2.1/LegalBot.RazorAssemblyInfo.cs
-C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/obj/Debug/netcoreapp2.1/LegalBot.AssemblyInfoInputs.cache
-C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/obj/Debug/netcoreapp2.1/LegalBot.AssemblyInfo.cs
-C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/obj/Debug/netcoreapp2.1/LegalBot.RazorTargetAssemblyInfo.cache
-C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/obj/Debug/netcoreapp2.1/LegalBot.genruntimeconfig.cache
-C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/bin/Debug/netcoreapp2.1/LegalBot.pdb
-C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/obj/Debug/netcoreapp2.1/LegalBot.csproj.CoreCompileInputs.cache
-C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/obj/Debug/netcoreapp2.1/LegalBot.dll
-C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/obj/Debug/netcoreapp2.1/LegalBot.pdb
 /home/maryanne/LegalBot/LegalBot/LegalBot/bin/Debug/netcoreapp2.1/appsettings.Development.json
 /home/maryanne/LegalBot/LegalBot/LegalBot/bin/Debug/netcoreapp2.1/DeploymentTemplates/new-rg-parameters.json
 /home/maryanne/LegalBot/LegalBot/LegalBot/bin/Debug/netcoreapp2.1/DeploymentTemplates/preexisting-rg-parameters.json
@@ -43,3 +21,26 @@ C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/obj/Debug/netcoreapp2.1/Lega
 /home/maryanne/LegalBot/LegalBot/LegalBot/obj/Debug/netcoreapp2.1/LegalBot.pdb
 /home/maryanne/LegalBot/LegalBot/LegalBot/obj/Debug/netcoreapp2.1/LegalBot.genruntimeconfig.cache
 /home/maryanne/LegalBot/LegalBot/LegalBot/bin/Debug/netcoreapp2.1/Json/county.json
+C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/obj/Debug/netcoreapp2.1/LegalBot.dll
+C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/obj/Debug/netcoreapp2.1/LegalBot.pdb
+C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/bin/Debug/netcoreapp2.1/appsettings.Development.json
+C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/bin/Debug/netcoreapp2.1/DeploymentTemplates/new-rg-parameters.json
+C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/bin/Debug/netcoreapp2.1/DeploymentTemplates/preexisting-rg-parameters.json
+C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/bin/Debug/netcoreapp2.1/DeploymentTemplates/template-with-new-rg.json
+C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/bin/Debug/netcoreapp2.1/DeploymentTemplates/template-with-preexisting-rg.json
+C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/bin/Debug/netcoreapp2.1/Json/county.json
+C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/bin/Debug/netcoreapp2.1/Properties/launchSettings.json
+C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/bin/Debug/netcoreapp2.1/appsettings.json
+C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/bin/Debug/netcoreapp2.1/LegalBot.deps.json
+C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/bin/Debug/netcoreapp2.1/LegalBot.runtimeconfig.json
+C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/bin/Debug/netcoreapp2.1/LegalBot.runtimeconfig.dev.json
+C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/bin/Debug/netcoreapp2.1/LegalBot.dll
+C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/bin/Debug/netcoreapp2.1/LegalBot.pdb
+C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/obj/Debug/netcoreapp2.1/LegalBot.AssemblyInfoInputs.cache
+C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/obj/Debug/netcoreapp2.1/LegalBot.AssemblyInfo.cs
+C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/obj/Debug/netcoreapp2.1/LegalBot.RazorAssemblyInfo.cache
+C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/obj/Debug/netcoreapp2.1/LegalBot.RazorAssemblyInfo.cs
+C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/obj/Debug/netcoreapp2.1/LegalBot.RazorTargetAssemblyInfo.cache
+C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/obj/Debug/netcoreapp2.1/LegalBot.genruntimeconfig.cache
+C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/obj/Debug/netcoreapp2.1/LegalBot.csprojAssemblyReference.cache
+C:/Users/Tech Jargon/source/repos/LegalBot/LegalBot/obj/Debug/netcoreapp2.1/LegalBot.csproj.CoreCompileInputs.cache

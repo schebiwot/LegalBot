@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.1": {
+      "AdaptiveCards/1.2.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.5.0",
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/AdaptiveCards.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/AdaptiveCards.dll": {}
+        }
+      },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
         "type": "package",
         "dependencies": {
@@ -4596,6 +4609,20 @@
     }
   },
   "libraries": {
+    "AdaptiveCards/1.2.4": {
+      "sha512": "qCqnzBIY/+sd255ccl0IaGeJoJoOaYeMuybLUM/VKREHp8n83fd6rIv2Ba3wgacyoEqGWxTDRro/M4eiZR5awQ==",
+      "type": "package",
+      "path": "adaptivecards/1.2.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "adaptivecards.1.2.4.nupkg.sha512",
+        "adaptivecards.nuspec",
+        "lib/net452/AdaptiveCards.dll",
+        "lib/netstandard1.3/AdaptiveCards.dll",
+        "lib/netstandard2.0/AdaptiveCards.dll"
+      ]
+    },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
       "sha512": "owAlEIUZXWSnkK8Z1c+zR47A0X6ykF4XjbPok4lQKNuciUfHLGPd6QnI+rt/8KlQ17PmF+I4S3f+m+Qe4IvViw==",
       "type": "package",
@@ -12473,6 +12500,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
+      "AdaptiveCards >= 1.2.4",
       "Microsoft.AspNetCore.App >= 2.1.1",
       "Microsoft.Bot.Builder.Dialogs >= 4.9.1",
       "Microsoft.Bot.Builder.Integration.AspNet.Core >= 4.7.0",
@@ -12519,6 +12547,10 @@
     "frameworks": {
       "netcoreapp2.1": {
         "dependencies": {
+          "AdaptiveCards": {
+            "target": "Package",
+            "version": "[1.2.4, )"
+          },
           "Microsoft.AspNetCore.App": {
             "suppressParent": "All",
             "target": "Package",

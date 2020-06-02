@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "RtjvijNoH8z0Dz7Ttfzgm4EMVIuQ6NiPDJLHzpMALy93nds1SxKEXd5h9M4vgELmq9xA8wHV0NI/k+oP/Ox1ig==",
+  "dgSpecHash": "2IsUCTBjxrYa7k4MSGVQLialni66At9BNczTq6iPWlgFV8YqexjrpCuag+RdUZMoTCpx+373ONr+mSUxeXqoEw==",
   "success": true,
   "projectFilePath": "/home/maryanne/LegalBot/LegalBot/LegalBot/LegalBot.csproj",
   "expectedPackageFiles": [
+    "/home/maryanne/.nuget/packages/adaptivecards/1.2.4/adaptivecards.1.2.4.nupkg.sha512",
     "/home/maryanne/.nuget/packages/microsoft.aspnet.webapi.client/5.2.6/microsoft.aspnet.webapi.client.5.2.6.nupkg.sha512",
     "/home/maryanne/.nuget/packages/microsoft.aspnetcore/2.1.1/microsoft.aspnetcore.2.1.1.nupkg.sha512",
     "/home/maryanne/.nuget/packages/microsoft.aspnetcore.antiforgery/2.1.1/microsoft.aspnetcore.antiforgery.2.1.1.nupkg.sha512",

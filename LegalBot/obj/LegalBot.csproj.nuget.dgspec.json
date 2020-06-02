@@ -39,6 +39,10 @@
       "frameworks": {
         "netcoreapp2.1": {
           "dependencies": {
+            "AdaptiveCards": {
+              "target": "Package",
+              "version": "[1.2.4, )"
+            },
             "Microsoft.AspNetCore.App": {
               "suppressParent": "All",
               "target": "Package",
