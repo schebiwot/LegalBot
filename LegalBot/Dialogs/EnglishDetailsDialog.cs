@@ -398,7 +398,7 @@ namespace LegalBot.Dialogs
                     Actions = choices.Select(choice => new AdaptiveSubmitAction
                     {
                         Title = choice,
-                        Data = choice, // This will be a string
+                        Data ="https://telegram.me/legal23bot" , // This will be a string
 
                     }).ToList<AdaptiveAction>(),
                   
@@ -408,19 +408,19 @@ namespace LegalBot.Dialogs
 
                 var promptOptions = new PromptOptions
                 {
-                    Prompt = new Activity
-                    {
-                        Attachments = new List<Attachment>() {
-                        new Attachment() {
+                    Prompt = (Activity)MessageFactory.Attachment(new Attachment{
+                       
+                        
                             ContentType = AdaptiveCard.ContentType,
-                            Content=card,
-                            //Content = JObject.FromObject(card),
-                        }
-                        }
-                    },
+                            // Content=card,
+                            Content = JObject.FromObject(card),
+                        
+                        }),
+                    
                     Choices = ChoiceFactory.ToChoices(choices),
                     Style = ListStyle.None,
                 };
+                
 
                 return await stepContext.PromptAsync($"{nameof(EnglishDetailsDialog)}.chooseAction", promptOptions, cancellationToken);
             }
