@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using LegalBot.Models;
+
 
 namespace LegalBot.Dialogs
 {
@@ -26,13 +28,24 @@ namespace LegalBot.Dialogs
             // which dialog we are going to call...
 
             AddDialog(new EnglishDetailsDialog($"{nameof(MainDialog)}.englishDialog", _botStateService));
+            AddDialog(new MainMenuDialog($"{nameof(MainDialog)}.mainMenuDialog", _botStateService));
             AddDialog(new WaterfallDialog($"{nameof(MainDialog)}.mainFlow", waterfallSteps));
+
             InitialDialogId = $"{nameof(MainDialog)}.mainFlow";
         }
         private async Task<DialogTurnResult> InitialSetupAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
-        {
-           
+        {   
+            UserDetails userDetails = await _botStateService.UserDetailsAccessor.GetAsync(stepContext.Context, ()=> new UserDetails());
+
+            if(string.IsNullOrEmpty(userDetails.FullName)){
+                
                 return await stepContext.BeginDialogAsync($"{nameof(MainDialog)}.englishDialog", null, cancellationToken);
+               
+            }
+            else{
+           
+                return await stepContext.BeginDialogAsync($"{nameof(MainDialog)}.mainMenuDialog", null, cancellationToken);
+            }
             
              
         }
