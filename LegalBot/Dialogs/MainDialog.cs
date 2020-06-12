@@ -28,7 +28,7 @@ namespace LegalBot.Dialogs
             // which dialog we are going to call...
 
             AddDialog(new EnglishDetailsDialog($"{nameof(MainDialog)}.englishDialog", _botStateService));
-            AddDialog(new MainMenuDialog($"{nameof(MainDialog)}.mainMenuDialog", _botStateService));
+            
             AddDialog(new WaterfallDialog($"{nameof(MainDialog)}.mainFlow", waterfallSteps));
 
             InitialDialogId = $"{nameof(MainDialog)}.mainFlow";
@@ -37,15 +37,12 @@ namespace LegalBot.Dialogs
         {   
             UserDetails userDetails = await _botStateService.UserDetailsAccessor.GetAsync(stepContext.Context, ()=> new UserDetails());
 
-            if(string.IsNullOrEmpty(userDetails.FullName)){
-                
-                return await stepContext.BeginDialogAsync($"{nameof(MainDialog)}.englishDialog", null, cancellationToken);
-               
-            }
-            else{
            
-                return await stepContext.BeginDialogAsync($"{nameof(MainDialog)}.mainMenuDialog", null, cancellationToken);
-            }
+                
+            return await stepContext.BeginDialogAsync($"{nameof(MainDialog)}.englishDialog", null, cancellationToken);
+               
+            
+           
             
              
         }

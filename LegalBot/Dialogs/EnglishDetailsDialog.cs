@@ -47,6 +47,11 @@ namespace LegalBot.Dialogs
                 WardStepAsync,
                 ConfirmationStepAsync,
                 FinalMenuAsync,
+                ChooseActionAsync,  
+                ThankYouActionAsync,
+                ChooseAction2Async, 
+
+                
                
             };
 
@@ -57,7 +62,11 @@ namespace LegalBot.Dialogs
             AddDialog(new NumberPrompt<int>($"{nameof(EnglishDetailsDialog)}.subcounty"));
             AddDialog(new NumberPrompt<int>($"{nameof(EnglishDetailsDialog)}.ward"));
             AddDialog(new ChoicePrompt($"{nameof(EnglishDetailsDialog)}.mainMenu"));
-            AddDialog(new MainMenuDialog($"{nameof(EnglishDetailsDialog)}.mainMenuDialog", _botStateService));
+            AddDialog(new ChoicePrompt($"{nameof(EnglishDetailsDialog)}.chooseMenu"));
+            AddDialog(new ChoicePrompt($"{nameof(EnglishDetailsDialog)}.chooseAction"));
+             AddDialog(new ChoicePrompt($"{nameof(EnglishDetailsDialog)}.thankAction"));
+              AddDialog(new ChoicePrompt($"{nameof(EnglishDetailsDialog)}.chooseAction2"));
+
             
             
 
@@ -65,15 +74,7 @@ namespace LegalBot.Dialogs
             // set the starting dialog 
             InitialDialogId = $"{nameof(EnglishDetailsDialog)}.mainFlow";
         }
-        // private async Task<DialogTurnResult> BeginRegistrationAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
-        // {
-            
-              
-        //         string bye = "Hello my name is Kuza,I give legal information";
-        //         await stepContext.Context.SendActivityAsync(bye);
-        //         return await stepContext.BeginDialogAsync($"{nameof(EnglishDetailsDialog)}.mainFlow", null, cancellationToken);
-        
-        // }
+       
 
         private async Task<DialogTurnResult> SelectedLanguageAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
         {  
@@ -329,13 +330,21 @@ namespace LegalBot.Dialogs
         }
 
         private async Task<DialogTurnResult> FinalMenuAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
-        {
+        {   
+            UserDetails userDetails = await _botStateService.UserDetailsAccessor.GetAsync(stepContext.Context, ()=> new UserDetails());
             stepContext.Values["mainMenu"] = ((FoundChoice)stepContext.Result).Value;
+
 
             if((string) stepContext.Values["mainMenu"] == "1.MENU")
             {
+                var promptOptions = new PromptOptions
+                {
+                    Prompt = MessageFactory.Text($"Hello {userDetails.FullName} ,Welcome back, Please choose our services from the list\n"),
+                    Choices = ChoiceFactory.ToChoices(new List<string> { "INFORMATION", "NEWS", " REFFERAL", "SURVEY", "UPDATE", "SHARE","EXIT" }),
 
-                return await stepContext.BeginDialogAsync($"{nameof(EnglishDetailsDialog)}.mainMenuDialog", null, cancellationToken);
+                };
+                return await stepContext.PromptAsync($"{nameof(EnglishDetailsDialog)}.chooseMenu", promptOptions, cancellationToken);
+                
             }
             else
             {
@@ -345,6 +354,138 @@ namespace LegalBot.Dialogs
                 return await stepContext.EndDialogAsync(cancellationToken: cancellationToken);
             }
         }
+        
+         private async Task<DialogTurnResult> ChooseActionAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
+        {
+            stepContext.Values["chooseMenu"] = ((FoundChoice)stepContext.Result).Value;
+
+            if ((string)stepContext.Values["chooseMenu"] == "SHARE")
+            {
+                
+                var card   = new HeroCard
+                 {
+                    Title ="Legal Bot",                   
+                    Text = "Please forward this link to share this service, to access the chatbot please click the link below",
+                    Buttons = new List<CardAction> { new CardAction(ActionTypes.OpenUrl, "Telegram Link", value: "https://telegram.me/legal23bot"),}  
+                   
+                };
+
+                
+
+               
+                var promptOptions = new PromptOptions{
+                    Prompt = (Activity)MessageFactory.Attachment(card.ToAttachment()),
+
+                    Choices = ChoiceFactory.ToChoices(new List<string> {"GO BACK"})
+                };
+                
+
+                return await stepContext.PromptAsync($"{nameof(EnglishDetailsDialog)}.chooseAction", promptOptions, cancellationToken);
+            }
+
+
+            else if ((string)stepContext.Values["chooseMenu"] == "EXIT" )
+            {
+                string bye = "GoodBye";
+                await stepContext.Context.SendActivityAsync(bye);
+
+                return await stepContext.EndDialogAsync(cancellationToken: cancellationToken);
+            }
+
+            else{
+                 var promptOptions = new PromptOptions
+                {
+                    Prompt = MessageFactory.Text($"Next option "),
+
+                };
+                return await stepContext.PromptAsync($"{nameof(EnglishDetailsDialog)}.chooseAction", promptOptions, cancellationToken);
+
+
+            }
+           
+        } 
+         private async Task<DialogTurnResult> ThankYouActionAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
+        {
+            stepContext.Values["chooseAction"] = ((FoundChoice)stepContext.Result).Value;
+
+            UserDetails userDetails = await _botStateService.UserDetailsAccessor.GetAsync(stepContext.Context, ()=> new UserDetails());
+
+             if((string) stepContext.Values["chooseAction"] == "GO BACK")
+             {
+                
+                var promptOptions = new PromptOptions
+                {
+                    Prompt = MessageFactory.Text($"Thank you {userDetails.FullName} please choose from any options in the main menu "),
+                    Choices = ChoiceFactory.ToChoices(new List<string> { "INFORMATION", "NEWS", " REFFERAL", "SURVEY", "UPDATE", "SHARE","EXIT" }),
+
+                };
+                
+
+                return await stepContext.PromptAsync($"{nameof(EnglishDetailsDialog)}.thankAction",promptOptions, cancellationToken);
+
+             }
+             else
+             {
+                string bye = $"GoodBye {userDetails.FullName}";
+                await stepContext.Context.SendActivityAsync(bye);
+                return await stepContext.EndDialogAsync(cancellationToken: cancellationToken);
+
+             }
+                
+        }
+
+
+        private async Task<DialogTurnResult> ChooseAction2Async(WaterfallStepContext stepContext, CancellationToken cancellationToken)
+        {
+            stepContext.Values["thankAction"] = ((FoundChoice)stepContext.Result).Value;
+            UserDetails userDetails = await _botStateService.UserDetailsAccessor.GetAsync(stepContext.Context, ()=> new UserDetails());
+
+            if ((string)stepContext.Values["thankAction"] == "SHARE")
+            {
+                
+                var card   = new HeroCard
+                 {
+                    Title ="Legal Bot",                   
+                    Text = "Please forward this link to share this service, to access the chatbot please click the link below",
+                    Buttons = new List<CardAction> { new CardAction(ActionTypes.OpenUrl, "Telegram Link", value: "https://telegram.me/legal23bot"), new CardAction(ActionTypes.ImBack, "Go Back", value: "Go Back"),}  
+                   
+                };
+
+                
+
+               
+                var promptOptions = new PromptOptions{
+                    Prompt = (Activity)MessageFactory.Attachment(card.ToAttachment()),
+
+                    Choices = ChoiceFactory.ToChoices(new List<string> {"GO BACK"})
+                };
+                
+
+                return await stepContext.PromptAsync($"{nameof(EnglishDetailsDialog)}.chooseAction2", promptOptions, cancellationToken);
+            }
+
+
+            else if ((string)stepContext.Values["thankAction"] == "EXIT" )
+            {
+                string bye = $"GoodBye {userDetails.FullName}";
+                await stepContext.Context.SendActivityAsync(bye);
+
+                return await stepContext.EndDialogAsync(cancellationToken: cancellationToken);
+            }
+
+            else{
+                 var promptOptions = new PromptOptions
+                {
+                    Prompt = MessageFactory.Text($"Next option "),
+
+                };
+                return await stepContext.PromptAsync($"{nameof(EnglishDetailsDialog)}.chooseAction2", promptOptions, cancellationToken);
+
+
+            }
+           
+        }
+
         
 
 
